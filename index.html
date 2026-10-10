@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Holst Albums – Create Your Dream Album</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--c0:#04222B;--c1:#0A3D4A;--c2:#10606F;--c3:#1D8B94;--c4:#4FB8B4;--c5:#98D8D0;--c6:#E2F4F0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font:15px/1.5 Inter,system-ui,sans-serif;color:var(--c6);background:linear-gradient(180deg,var(--c3) -40%,var(--c1) 35%,var(--c0) 100%) fixed;min-height:100vh}
+a{color:inherit}.script{font-family:Poppins,system-ui,sans-serif;font-weight:800;letter-spacing:-.03em}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 5vw;position:sticky;top:env(safe-area-inset-top,0px);background:#04222Bd9;backdrop-filter:blur(8px);z-index:5}
+header .logo{font-size:24px;color:var(--c4);text-decoration:none}nav a{margin-left:18px;text-decoration:none;color:var(--c5);font-size:14px}
+main{max-width:1000px;margin:0 auto;padding:28px 5vw 80px}
+h1,h2,h3{font-family:Poppins,system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;margin:.2em 0 .4em}h1{font-size:clamp(30px,6vw,52px);line-height:1.1}
+.script.big{font-size:clamp(52px,12vw,104px);color:var(--c4);line-height:1;letter-spacing:-.05em}
+.steps{display:flex;gap:6px;margin-bottom:22px;flex-wrap:wrap}.steps span{padding:5px 12px;border-radius:99px;background:#ffffff14;font-size:12px;color:var(--c5)}.steps .on{background:var(--c4);color:var(--c0);font-weight:600}
+.btn{display:inline-block;border:0;border-radius:99px;padding:12px 28px;font:700 15px Poppins,sans-serif;background:var(--c4);color:var(--c0);cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--c5)}.btn.ghost{background:transparent;border:1.5px solid var(--c4);color:var(--c5)}.btn[disabled]{opacity:.4;pointer-events:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}
+.card{background:var(--c1);border:1px solid #4FB8B455;border-radius:22px;padding:16px;cursor:pointer;transition:.2s}.card:hover,.card.sel{border-color:var(--c4);transform:translateY(-3px);box-shadow:0 10px 30px #0006}.card.sel{background:var(--c2)}
+.cover{aspect-ratio:1;border-radius:6px 14px 14px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;box-shadow:inset 8px 0 10px -6px #0005,0 8px 20px #0005;padding:10%}
+.cover::after{content:"";position:absolute;bottom:-30%;left:-10%;width:120%;height:55%;border-radius:50%;background:currentColor;opacity:.13}
+.cover b{font:800 clamp(20px,4vw,32px) Poppins,sans-serif;line-height:1.05;text-transform:uppercase;letter-spacing:-.01em;z-index:1}.cover small{letter-spacing:.3em;font-size:11px;margin-top:8px;z-index:1}
+.row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}.row>*{flex:1 1 300px}
+input,textarea,select{width:100%;padding:11px 14px;border-radius:12px;border:1.5px solid #4FB8B466;background:var(--c0);color:var(--c6);font:inherit;margin:4px 0 12px}
+label{font-size:13px;color:var(--c5)}.panel{background:var(--c1);border-radius:22px;padding:22px;border:1px solid #4FB8B433}
+.drop{border:2px dashed var(--c4);border-radius:22px;padding:36px;text-align:center;cursor:pointer;background:#ffffff08}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;margin-top:16px}
+.thumbs div{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--c0)}.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs button.x{position:absolute;top:4px;right:4px;border:0;border-radius:50%;width:24px;height:24px;background:#04222Bcc;color:#fff;cursor:pointer}
+.thumbs .n{position:absolute;left:4px;bottom:4px;background:#04222Bcc;font-size:11px;padding:1px 7px;border-radius:9px}
+.thumbs div.over{outline:3px solid var(--c4)}
+.book{display:flex;gap:4px;justify-content:center;align-items:stretch;max-width:640px;margin:0 auto}.book>*{flex:1;aspect-ratio:1;border-radius:4px;overflow:hidden;background:var(--c6)}.book img{width:100%;height:100%;object-fit:cover}
+.book .blank{background:var(--c5)}.muted{color:var(--c5);opacity:.85}.price{font-size:26px;font-weight:600;color:var(--c4)}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px;border-bottom:1px solid #4FB8B433;font-size:14px}
+.pill{padding:3px 11px;border-radius:99px;background:var(--c3);font-size:12px}
+.pay{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.pay .card{flex:1 1 120px;padding:12px;text-align:center}
+.hero{text-align:center;padding:40px 0 20px}.hero p{max-width:520px;margin:0 auto 24px;color:var(--c5)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:40px}.flow div{background:var(--c1);padding:16px;border-radius:18px;text-align:center;font-size:13px}.flow b{display:block;font:800 30px Poppins,sans-serif;color:var(--c4)}
+@media(max-width:640px){main{padding:18px 16px 60px}header{padding:10px 16px}header .logo{font-size:20px}nav a{margin-left:12px}.steps{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.steps span{white-space:nowrap}.grid{grid-template-columns:repeat(2,1fr);gap:12px}.card{padding:10px;border-radius:16px}.row>*{flex-basis:100%}.panel{padding:16px}.hero{padding:20px 0}.btn{padding:12px 22px}}
+</style></head><body>
+<header><a class="logo script" href="#/">Holst Albums</a><nav><a href="#/themes">Create</a></nav></header>
+<main id="app"></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+// === Same Supabase project as the admin site ===
+const SB_URL='YOUR_SUPABASE_URL',SB_KEY='YOUR_SUPABASE_ANON_KEY',BUCKET='album-photos';
+const sb=supabase.createClient(SB_URL,SB_KEY);
+const THEMES=[{id:'goa',n:'Goa',bg:'#1D8B94',fg:'#E2F4F0'},{id:'ladakh',n:'Ladakh',bg:'#0A3D4A',fg:'#98D8D0'},{id:'kerala',n:'Kerala',bg:'#4FB8B4',fg:'#04222B'},{id:'wedding',n:'Our Wedding',bg:'#E2F4F0',fg:'#10606F'},{id:'baby',n:'Baby Days',bg:'#98D8D0',fg:'#0A3D4A'},{id:'couple',n:'Us Two',bg:'#04222B',fg:'#4FB8B4'}];
+const SIZES=[{id:'s',n:'8×8 in',d:'20 pages · perfect-bound',pages:20,price:999},{id:'m',n:'10×10 in',d:'30 pages · premium hardcover',pages:30,price:1499},{id:'l',n:'12×12 in',d:'40 pages · lay-flat binding',pages:40,price:2299}];
+const STEPS=['Theme','Size','Photos','Preview','Finish','Details','Payment'];
+const ROUTES=['themes','size','photos','preview','finish','checkout','payment'];
+const inr=n=>'₹'+n.toLocaleString('en-IN');
+let D={theme:null,size:null,photos:[],title:'',year:new Date().getFullYear(),note:'',c:{}};
+let DB=null,pg=0;
+const $=s=>document.querySelector(s),app=$('#app');
+const LS={get:k=>{try{return JSON.parse(localStorage.getItem(k))}catch{return null}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}};
+const T=id=>THEMES.find(t=>t.id==id),S=id=>SIZES.find(s=>s.id==id);
+const cover=(t,title,yr)=>`<div class="cover" style="background:${t.bg};color:${t.fg}"><b>${esc(title||t.n)}</b><small>${yr||''}</small></div>`;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const stepbar=i=>`<div class="steps">${STEPS.map((s,j)=>`<span class="${j==i?'on':''}">${j+1}. ${s}</span>`).join('')}</div>`;
+const go=h=>{location.hash=h};
+function guard(i){ // redirect when earlier step missing
+ if(i>=1&&!D.theme)return go('#/themes'),1;if(i>=2&&!D.size)return go('#/size'),1;
+ if(i>=4&&D.photos.length<1)return go('#/photos'),1;return 0}
+async function route(){
+ const r=(location.hash.replace('#/','')||'home').split('/');scrollTo(0,0);
+ if(r[0]=='home')return home();
+ if(r[0]=='done')return done(r[1]);
+ const i=ROUTES.indexOf(r[0]);if(i<0)return home();if(guard(i))return;
+ [themes,size,photos,preview,finish,checkout,payment][i]();
+}
+function home(){app.innerHTML=`<div class="hero"><div class="script big">Holst</div><h1>Create your dream album</h1><p>Pick a beautifully illustrated cover, add your photos, and we print and deliver a hardcover album you'll keep forever.</p><a class="btn" href="#/themes">Start your album</a>
+<div class="flow">${['Choose a theme','Pick a size','Add photos','Preview','Finish','Order'].map((s,i)=>`<div><b>${i+1}</b>${s}</div>`).join('')}</div></div>
+<h2 style="margin-top:50px">Featured covers</h2><div class="grid">${THEMES.map(t=>cover(t,'',2026)).join('')}</div>`}
+function themes(){app.innerHTML=stepbar(0)+`<h1>Choose a theme</h1><p class="muted">Each cover is an original illustration you can personalise.</p><div class="grid">${THEMES.map(t=>`<div class="card ${D.theme==t.id?'sel':''}" data-t="${t.id}">${cover(t,'',D.year)}<h3 style="margin:12px 0 0">${t.n}</h3></div>`).join('')}</div>`;
+ app.querySelectorAll('[data-t]').forEach(e=>e.onclick=()=>{if(D.theme!=e.dataset.t)D.title='';D.theme=e.dataset.t;go('#/size')})}
+function size(){app.innerHTML=stepbar(1)+`<h1>Select album size</h1><div class="grid">${SIZES.map(s=>`<div class="card ${D.size==s.id?'sel':''}" data-s="${s.id}"><h2 style="margin:0">${s.n}</h2><p class="muted">${s.d}</p><div class="price">${inr(s.price)}</div></div>`).join('')}</div><p class="muted">Prices include GST. Free delivery across India.</p>
+<p><a class="btn ghost" href="#/themes">Back</a></p>`;
+ app.querySelectorAll('[data-s]').forEach(e=>e.onclick=()=>{D.size=e.dataset.s;go('#/photos')})}
+function shrink(f){return new Promise(res=>{const im=new Image();im.onload=()=>{const k=Math.min(1,2400/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(b=>res(b?{b,u:URL.createObjectURL(b)}:null),'image/jpeg',.88)};im.onerror=()=>res(null);im.src=URL.createObjectURL(f)})}
+function photos(){const s=S(D.size);let drag=null;
+ const draw=()=>{$('#th').innerHTML=D.photos.map((p,i)=>`<div draggable="true" data-i="${i}"><img src="${p.u}"><button class="x" data-x="${i}">×</button><span class="n">${i+1}</span></div>`).join('');
+  $('#cnt').textContent=`${D.photos.length} / ${s.pages} photos`;$('#nx').toggleAttribute('disabled',D.photos.length<1);
+  $('#th').querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>{D.photos.splice(+b.dataset.x,1);draw()});
+  $('#th').querySelectorAll('[data-i]').forEach(d=>{d.ondragstart=()=>drag=+d.dataset.i;d.ondragover=e=>{e.preventDefault();d.classList.add('over')};d.ondragleave=()=>d.classList.remove('over');d.ondrop=e=>{e.preventDefault();const j=+d.dataset.i;if(drag!=null&&drag!=j){const[m]=D.photos.splice(drag,1);D.photos.splice(j,0,m)}draw()}})};
+ app.innerHTML=stepbar(2)+`<h1>Add your photos</h1><p class="muted">Up to ${s.pages} photos for the ${s.n} album. Drag thumbnails to reorder pages.</p><div class="drop" id="dz"><b>Tap to choose photos</b><br><span class="muted">JPG or PNG · select many at once</span></div><input type="file" id="fi" accept="image/*" multiple hidden><div id="cnt" class="muted" style="margin-top:14px"></div><div class="thumbs" id="th"></div><p><a class="btn ghost" href="#/size">Back</a> <a class="btn" id="nx" href="#/preview">Preview album</a></p>`;
+ $('#dz').onclick=()=>$('#fi').click();
+ $('#fi').onchange=async e=>{$('#cnt').textContent='Processing…';for(const f of [...e.target.files]){if(D.photos.length>=s.pages)break;const d=await shrink(f);if(d)D.photos.push(d)}draw()};draw()}
+function preview(){const t=T(D.theme),s=S(D.size),P=D.photos;pg=0;
+ const pages=['cover',...P.map(p=>p.u)];if(pages.length%2==0)pages.push(null);
+ const spread=()=>{const a=pages[pg*2-1],b=pages[pg*2];
+  const el=x=>x==='cover'?cover(t,D.title,D.year):x?`<img src="${x}">`:'<div class="blank"></div>';
+  $('#bk').innerHTML=pg==0?`<div style="visibility:hidden"></div>`+el('cover'):el(a)+el(b);
+  $('#pi').textContent=pg==0?'Front cover':`Pages ${pg*2-1}–${pg*2}`};
+ const max=Math.ceil(pages.length/2)-1;
+ app.innerHTML=stepbar(3)+`<h1>Preview your album</h1><p class="muted">${t.n} · ${s.n} · ${P.length} photos</p><div class="book" id="bk"></div><p style="text-align:center"><span id="pi" class="muted"></span><br><button class="btn ghost" id="pv">‹ Prev</button> <button class="btn ghost" id="pn">Next ›</button></p><p><a class="btn ghost" href="#/photos">Edit photos</a> <a class="btn" href="#/finish">Looks great</a></p>`;
+ $('#pv').onclick=()=>{pg=Math.max(0,pg-1);spread()};$('#pn').onclick=()=>{pg=Math.min(max,pg+1);spread()};spread()}
+function finish(){const t=T(D.theme),s=S(D.size);D.title=D.title||t.n;
+ app.innerHTML=stepbar(4)+`<h1>Finish your album</h1><div class="row"><div style="max-width:340px">${cover(t,D.title,D.year)}</div><div class="panel"><label>Cover title</label><input id="ti" value="${esc(D.title)}" maxlength="28"><label>Year</label><input id="yr" value="${D.year}" maxlength="4"><label>Dedication note (printed on first page)</label><textarea id="nt" rows="3">${esc(D.note)}</textarea><p class="muted">${s.n} · ${D.photos.length} photos · <span class="price">${inr(s.price)}</span></p><a class="btn ghost" href="#/preview">Back</a> <button class="btn" id="go">Confirm &amp; continue</button></div></div>`;
+ $('#go').onclick=()=>{D.title=$('#ti').value||t.n;D.year=$('#yr').value;D.note=$('#nt').value;go('#/checkout')}}
+const summary=()=>{const t=T(D.theme),s=S(D.size);return `<div class="panel"><h3 style="margin-top:0">Order summary</h3><div style="max-width:150px">${cover(t,D.title,D.year)}</div><p>${esc(D.title)} · ${s.n}<br><span class="muted">${D.photos.length} photos · free delivery</span></p><div class="price">${inr(s.price)}</div></div>`};
+function checkout(){const c=D.c;const f=(k,l,t='text')=>`<label>${l}</label><input id="f_${k}" type="${t}" value="${esc(c[k]||'')}">`;
+ app.innerHTML=stepbar(5)+`<h1>Contact &amp; delivery</h1><div class="row"><div class="panel">${f('name','Full name')}${f('phone','Phone / WhatsApp','tel')}${f('email','Email','email')}<label>Address</label><textarea id="f_addr" rows="2">${esc(c.addr||'')}</textarea>${f('city','City')}${f('pin','PIN code')}<p id="er" style="color:#ff9d9d"></p><a class="btn ghost" href="#/finish">Back</a> <button class="btn" id="go">Continue to payment</button></div>${summary()}</div>`;
+ $('#go').onclick=()=>{['name','phone','email','addr','city','pin'].forEach(k=>c[k]=$('#f_'+k).value.trim());
+  if(!c.name||!/^\d{10}$/.test(c.phone.replace(/\D/g,'').slice(-10))||!c.addr||!c.city||!/^\d{6}$/.test(c.pin))return $('#er').textContent='Please fill name, a 10-digit phone, address, city and a 6-digit PIN.';go('#/payment')}}
+function payment(){let m='upi';const s=S(D.size);
+ app.innerHTML=stepbar(6)+`<h1>Payment</h1><div class="row"><div class="panel"><div class="pay">${[['upi','UPI'],['card','Card'],['cod','Cash on delivery']].map(([k,l])=>`<div class="card ${k==m?'sel':''}" data-m="${k}">${l}</div>`).join('')}</div><p class="muted">Demo checkout: no real payment is taken. Connect Razorpay or Cashfree to go live.</p><p><a class="btn ghost" href="#/checkout">Back</a> <button class="btn" id="pay">Pay ${inr(s.price)}</button></p></div>${summary()}</div>`;
+ app.querySelectorAll('[data-m]').forEach(e=>e.onclick=()=>{m=e.dataset.m;app.querySelectorAll('[data-m]').forEach(x=>x.classList.toggle('sel',x==e))});
+ $('#pay').onclick=async()=>{const b=$('#pay');b.setAttribute('disabled','');
+  const id='HA'+Date.now().toString(36).toUpperCase(),c=D.c;
+  try{const paths=[];
+   for(let i=0;i<D.photos.length;i++){b.textContent=`Uploading photo ${i+1}/${D.photos.length}…`;const p=id+'/'+String(i+1).padStart(3,'0')+'.jpg';
+    const{error}=await sb.storage.from(BUCKET).upload(p,D.photos[i].b,{contentType:'image/jpeg'});if(error)throw error;paths.push(p)}
+   b.textContent='Placing order…';
+   const{error}=await sb.from('orders').insert({id,theme:D.theme,size:D.size,title:D.title,year:String(D.year),note:D.note,name:c.name,phone:c.phone,email:c.email,addr:c.addr,city:c.city,pin:c.pin,pay:m,total:s.price,photo_paths:paths});if(error)throw error;
+   D={theme:null,size:null,photos:[],title:'',year:new Date().getFullYear(),note:'',c:{}};go('#/done/'+id)}
+  catch(e){b.removeAttribute('disabled');b.textContent='Retry payment';alert('Could not place your order: '+(e.message||e))}}}
+function done(id){app.innerHTML=`<div class="hero"><div class="script big">Thank you</div><h1>Order ${esc(id)} placed</h1><p>We'll send a proof on WhatsApp within 24 hours. Your album ships in 5–7 working days.</p><a class="btn" href="#/">Back to home</a></div>`}
+addEventListener('hashchange',route);route();
+</script></body></html>
