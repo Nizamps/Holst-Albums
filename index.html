@@ -43,7 +43,7 @@ table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px;bor
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 // === Same Supabase project as the admin site ===
-const SB_URL='YOUR_SUPABASE_URL',SB_KEY='YOUR_SUPABASE_ANON_KEY',BUCKET='album-photos';
+const SB_URL='https://ojxxxzyifckpadvfonal.supabase.co/rest/v1/',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qeHh4enlpZmNrcGFkdmZvbmFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE2NDc3NTMsImV4cCI6MjEwNzIyMzc1M30._W-Sw8Jf0li2z7s5ZOaPb8E_urA55BdcT4SeiAa6lRM',BUCKET='album-photos';
 const sb=supabase.createClient(SB_URL,SB_KEY);
 const THEMES=[{id:'goa',n:'Goa',bg:'#1D8B94',fg:'#E2F4F0'},{id:'ladakh',n:'Ladakh',bg:'#0A3D4A',fg:'#98D8D0'},{id:'kerala',n:'Kerala',bg:'#4FB8B4',fg:'#04222B'},{id:'wedding',n:'Our Wedding',bg:'#E2F4F0',fg:'#10606F'},{id:'baby',n:'Baby Days',bg:'#98D8D0',fg:'#0A3D4A'},{id:'couple',n:'Us Two',bg:'#04222B',fg:'#4FB8B4'}];
 const SIZES=[{id:'s',n:'8×8 in',d:'20 pages · perfect-bound',pages:20,price:999},{id:'m',n:'10×10 in',d:'30 pages · premium hardcover',pages:30,price:1499},{id:'l',n:'12×12 in',d:'40 pages · lay-flat binding',pages:40,price:2299}];
